@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for lesson in subjects.lessons.all %}
+    <a href="{% url 'curriculam:lesson_detail' slug=lesson.slug subject=subjects.slug standard=lesson.Standard.slug %}">Chapter-{{lesson.position}}: {{lesson.name}}</a>
+{% endfor %} 
+{% endblock %}
